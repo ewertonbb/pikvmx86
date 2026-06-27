@@ -6,7 +6,10 @@ docker save -o pikvmx86_backup.tar feipyang/kvmdx86:20200805
 docker load -i pikvmx86_backup.tar
 docker run -d -p443:443 -p80:80 --device=/dev/ttyUSB0:/dev/kvmd-hid --device=/dev/video0:/dev/kvmd-video feipyang/kvmdx86:20200805
 ```
-
+```
+#teste ustreamer
+ustreamer --device=/dev/video0 --format=mjpeg --resolution=1920x1080 --desired-fps=30 --host=0.0.0.0 --port=8080
+```
 ### What is `Pi-KVM on X86`
 Run [Pi-KVM](https://github.com/pikvm) on x86 platform using [docker](http://www.docker.com).
 
